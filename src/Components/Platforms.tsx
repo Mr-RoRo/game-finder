@@ -16,7 +16,7 @@ const Platforms = ({ platforms }: Props) => {
   };
   return (
     <div className="flex space-x-2 text-white">
-      {platforms.map((platform) => {
+      {platforms?.map((platform) => {
         const IconComponent = iconMap[platform.slug];
         return IconComponent ? <IconComponent key={platform.id} /> : null;
       })}
