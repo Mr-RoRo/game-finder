@@ -1,4 +1,4 @@
-import { ApiParams, ApiResponse, query } from "./Request";
+import { ApiParams, query } from "./Request";
 import { AxiosRequestConfig } from "axios";
 
 async function HttpRequest<DataType>(url: string, options: AxiosRequestConfig) {
@@ -16,7 +16,7 @@ export class DataProvider {
     if (params && params.onUploadProgress) {
       options.onUploadProgress = params.onUploadProgress;
     }
-    const data = await HttpRequest<ApiResponse<DataType>>(url, options);
+    const data = await HttpRequest<DataType>(url, options);
     return data;
   };
   static async get<DataType>(url: string, params?: ApiParams) {
@@ -29,7 +29,7 @@ export class DataProvider {
     if (params && params.onUploadProgress) {
       options.onUploadProgress = params.onUploadProgress;
     }
-    const data = await HttpRequest<ApiResponse<DataType>>(url, options);
+    const data = await HttpRequest<DataType>(url, options);
     return data;
   }
 
@@ -43,7 +43,7 @@ export class DataProvider {
     if (params && params.onUploadProgress) {
       options.onUploadProgress = params.onUploadProgress;
     }
-    const data = await HttpRequest<ApiResponse<DataType>>(url, options);
+    const data = await HttpRequest<DataType>(url, options);
     return data;
   }
   static async put<DataType>(url: string, params?: ApiParams) {
@@ -56,7 +56,7 @@ export class DataProvider {
     if (params && params.onUploadProgress) {
       options.onUploadProgress = params.onUploadProgress;
     }
-    const data = await HttpRequest<ApiResponse<DataType>>(url, options);
+    const data = await HttpRequest<DataType>(url, options);
     return data;
   }
 
@@ -70,7 +70,7 @@ export class DataProvider {
     if (params && params.onUploadProgress) {
       options.onUploadProgress = params.onUploadProgress;
     }
-    const data = await HttpRequest<ApiResponse<DataType>>(url, options);
+    const data = await HttpRequest<DataType>(url, options);
     return data;
   }
 }
