@@ -86,7 +86,7 @@ const GamePage = () => {
         </div>
       </div>
       <h2 className="text-slate-500">Description</h2>
-      <p className={`line-clamp-${isExpanded ? "none" : "6"}`}>
+      <p className={`${!isExpanded && "line-clamp-6"}`}>
         {game.description_raw}
       </p>
       <button
