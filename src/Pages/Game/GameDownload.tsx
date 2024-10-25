@@ -19,7 +19,9 @@ const GameDownload = () => {
     setSearched(true);
     setLoading(true);
     const gameName = slug || "";
-    const url = `https://par30games.net/?s="${encodeURIComponent(gameName)}"`;
+    const url = `https://thingproxy.freeboard.io/fetch/https://par30games.net/?s="${encodeURIComponent(
+      gameName
+    )}"`;
 
     try {
       const response = await DataProvider.get<string>(url);
@@ -41,7 +43,9 @@ const GameDownload = () => {
   const getGamePageLinks = async (href: string) => {
     const parser = new DOMParser();
     try {
-      const response = await DataProvider.get<string>(href);
+      const response = await DataProvider.get<string>(
+        `https://thingproxy.freeboard.io/fetch/${href}`
+      );
       const linkedDoc = parser.parseFromString(response, "text/html");
       const downloadLinks = linkedDoc.querySelectorAll("a");
       downloadLinks.forEach((link) => {
