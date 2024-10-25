@@ -3,6 +3,7 @@ import { DataProvider } from "../../Core/DataProvider";
 import { useEffect, useState } from "react";
 import { Platform } from "../../Components/Platforms";
 import imageOpt from "../../Core/ImageUrl";
+import GameDownload from "./GameDownload";
 
 interface Genre {
   id: number;
@@ -107,6 +108,7 @@ const GamePage = () => {
         <p className="text-slate-500">Tags</p>
         <p>{game.tags.map((tag) => tag.name).join(", ")}</p>
       </div>
+      <GameDownload />
     </div>
   );
 };

@@ -21,7 +21,7 @@ const GameCard = ({ game }: Props) => {
         </figure>
         <div className="card-body">
           <Platforms
-            platforms={game.parent_platforms.map(
+            platforms={game.parent_platforms?.map(
               (platform) => platform.platform
             )}
           />
