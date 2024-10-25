@@ -21,7 +21,7 @@ const HomePage = () => {
   );
   const getGames = async () => {
     try {
-      const response = await DataProvider.get<Game[]>(
+      const response = await DataProvider.get<ApiResponse<Game[]>>(
         `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}`
       );
       setGames(response);
@@ -31,7 +31,7 @@ const HomePage = () => {
   };
   const fetchGamesNextPage = async () => {
     try {
-      const response = await DataProvider.get<Game[]>(games.next);
+      const response = await DataProvider.get<ApiResponse<Game[]>>(games.next);
       setGames({
         ...response,
         results: [...games.results, ...response.results],
