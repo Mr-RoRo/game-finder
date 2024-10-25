@@ -19,7 +19,7 @@ const GameDownload = () => {
     setSearched(true);
     setLoading(true);
     const gameName = slug || "";
-    const url = `https://thingproxy.freeboard.io/fetch/https://par30games.net/?s="${encodeURIComponent(
+    const url = `https://cors-anywhere-f5lo.onrender.com/https://par30games.net/?s="${encodeURIComponent(
       gameName
     )}"`;
 
@@ -44,7 +44,7 @@ const GameDownload = () => {
     const parser = new DOMParser();
     try {
       const response = await DataProvider.get<string>(
-        `https://thingproxy.freeboard.io/fetch/${href}`
+        `https://cors-anywhere-f5lo.onrender.com/${href}`
       );
       const linkedDoc = parser.parseFromString(response, "text/html");
       const downloadLinks = linkedDoc.querySelectorAll("a");
